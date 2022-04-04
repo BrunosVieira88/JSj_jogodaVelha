@@ -1,0 +1,12 @@
+.tamanho{
+    width: 33%;
+    height: 100px;
+}
+.br{
+    border-right:  solid black;
+}
+
+.centraliza{
+    margin-top:7%; font-size: 28px; font-weight: bolder;
+
+}
