@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
 .tamanho{
     width: 33%;
     height: 100px;
@@ -9,4 +10,10 @@
 .centraliza{
     margin-top:7%; font-size: 28px; font-weight: bolder;
 
+}
+
+.player_ativo{
+    font-family: 'Rubik Wet Paint', cursive;
+    color: blue;
+    text-shadow: 1px 1px 2px black;;
 }

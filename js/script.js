@@ -1,5 +1,3 @@
- 
-
 function recarrega(){
     location.reload();
 }
@@ -11,12 +9,12 @@ function muda(elemento){
     if (jogador.innerHTML == 'X') {
         let player = document.getElementById('troca_'+elemento);
         let HTMLTemporario = player.innerHTML;
-      
+        
         if (HTMLTemporario != "" || HTMLTemporario.length >= 1) {
-           
+            vencedor();
             Swal.fire({
                 position: 'center',
-                title: 'Já Foi escolhido',
+                html: '<span  class="player_ativo">Já Foi escolhido</span>',
                 showConfirmButton: false,
                 timer: 1000
               });
@@ -28,10 +26,10 @@ function muda(elemento){
               player.innerHTML = HTMLTemporario;
               jogador.innerHTML = "0";
       
-      
+              vencedor();
               Swal.fire({
                   position: 'center',
-                  title: 'Jogador 0',
+                  title: '<span  class="player_ativo">Jogador 0</span>',
                   showConfirmButton: false,
                   timer: 1000
                 });
@@ -42,10 +40,10 @@ function muda(elemento){
         let HTMLTemporario = player.innerHTML;
 
         if (HTMLTemporario != "" || HTMLTemporario.length >= 1) {
-           
+            vencedor();
             Swal.fire({
                 position: 'center',
-                title: 'Já Foi escolhido',
+                title: '<span  class="player_ativo">Já Foi escolhido</span>',
                 showConfirmButton: false,
                 timer: 1000
               });
@@ -55,11 +53,11 @@ function muda(elemento){
             HTMLTemporario = HTMLNovo + HTMLTemporario;
             player.innerHTML = HTMLTemporario;
             jogador.innerHTML = "X";
-
+            vencedor();
 
             Swal.fire({
                 position: 'center',
-                title: 'Jogador X',
+                title: '<span  class="player_ativo">Jogador X</span>',
                 showConfirmButton: false,
                 timer: 1000
             });
@@ -69,3 +67,90 @@ function muda(elemento){
     
       
 }  
+
+function vencedor(){
+    let array = [];
+    empatou =[];
+    for (let i = 1; i <= 9; i++) {
+        array[i] = document.getElementById('troca_'+ i).innerHTML;
+        if (array[i] != "") {
+            empatou.push(array[i]);
+            if (empatou.length == 9) {
+                Swal.fire('Empatou');
+            }
+        }
+        
+    }
+
+
+    //primeira linha 
+    if(array[1] == 'X' && array[2] == 'X' && array[3] == 'X' ){
+        Swal.fire('Voce Venceu Jogador X');
+
+    }else if(array[1] == '0' && array[2] == '0' && array[3] == '0' ){
+        Swal.fire('Voce Venceu Jogador 0');
+    }else
+
+
+    //segunda linha 
+    if(array[4] == 'X' && array[5] == 'X' && array[6] == 'X' ){
+        Swal.fire('Voce Venceu Jogador X');
+
+    }else if(array[4] == '0' && array[5] == '0' && array[6] == '0' ){
+        Swal.fire('Voce Venceu Jogador 0');
+    }else
+
+
+    //terceira linha 
+    if(array[7] == 'X' && array[8] == 'X' && array[9] == 'X' ){
+        Swal.fire('Voce Venceu Jogador X');
+
+    }else if(array[7] == '0' && array[8] == '0' && array[9] == '0' ){
+        Swal.fire('Voce Venceu Jogador 0');
+    }else
+
+
+    //1 coluna 
+    if(array[1] == 'X' && array[4] == 'X' && array[7] == 'X' ){
+        Swal.fire('Voce Venceu Jogador X');
+
+    }else if(array[1] == '0' && array[4] == '0' && array[7] == '0' ){
+        Swal.fire('Voce Venceu Jogador 0');
+    }else
+    
+    //2coluna
+    if(array[2] == 'X' && array[5] == 'X' && array[8] == 'X' ){
+        Swal.fire('Voce Venceu Jogador X');
+
+    }else if(array[2] == '0' && array[5] == '0' && array[8] == '0' ){
+        Swal.fire('Voce Venceu Jogador 0');
+    }else
+
+    //3 coluna 
+    if(array[3] == 'X' && array[6] == 'X' && array[9] == 'X' ){
+        Swal.fire('Voce Venceu Jogador X');
+
+    }else if(array[3] == '0' && array[6] == '0' && array[9] == '0' ){
+        Swal.fire('Voce Venceu Jogador 0');
+    }else
+
+    //1 cruzado 
+    if(array[1] == 'X' && array[5] == 'X' && array[9] == 'X' ){
+        Swal.fire('Voce Venceu Jogador X');
+
+    }else if(array[1] == '0' && array[5] == '0' && array[9] == '0' ){
+        Swal.fire('Voce Venceu Jogador 0');
+    }else
+
+    // segundo cruzado 
+    if(array[3] == 'X' && array[5] == 'X' && array[7] == 'X' ){
+        Swal.fire('Voce Venceu Jogador X');
+
+    }else if(array[3] == '0' && array[5] == '0' && array[7] == '0' ){
+        Swal.fire('Voce Venceu Jogador 0');
+    }
+
+
+
+   
+}
