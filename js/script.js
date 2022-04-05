@@ -86,11 +86,16 @@ function vencedor(){
     //primeira linha 
     if(array[1] == 'X' && array[2] == 'X' && array[3] == 'X' ){
         Swal.fire('Voce Venceu Jogador X');
+        document.getElementById('troca_1').style.backgroundColor = "#03F035";
+        document.getElementById('troca_2').style.backgroundColor = "#03F035";
+        document.getElementById('troca_3').style.backgroundColor = "#03F035";
 
     }else if(array[1] == '0' && array[2] == '0' && array[3] == '0' ){
         Swal.fire('Voce Venceu Jogador 0');
-    }else
-
+        document.getElementById('troca_1').style.backgroundColor = "#03F035";
+        document.getElementById('troca_2').style.backgroundColor = "#03F035";
+        document.getElementById('troca_3').style.backgroundColor = "#03F035";
+    }
 
     //segunda linha 
     if(array[4] == 'X' && array[5] == 'X' && array[6] == 'X' ){
@@ -98,7 +103,7 @@ function vencedor(){
 
     }else if(array[4] == '0' && array[5] == '0' && array[6] == '0' ){
         Swal.fire('Voce Venceu Jogador 0');
-    }else
+    }
 
 
     //terceira linha 
@@ -107,7 +112,7 @@ function vencedor(){
 
     }else if(array[7] == '0' && array[8] == '0' && array[9] == '0' ){
         Swal.fire('Voce Venceu Jogador 0');
-    }else
+    }
 
 
     //1 coluna 
@@ -116,7 +121,7 @@ function vencedor(){
 
     }else if(array[1] == '0' && array[4] == '0' && array[7] == '0' ){
         Swal.fire('Voce Venceu Jogador 0');
-    }else
+    }
     
     //2coluna
     if(array[2] == 'X' && array[5] == 'X' && array[8] == 'X' ){
@@ -124,7 +129,7 @@ function vencedor(){
 
     }else if(array[2] == '0' && array[5] == '0' && array[8] == '0' ){
         Swal.fire('Voce Venceu Jogador 0');
-    }else
+    }
 
     //3 coluna 
     if(array[3] == 'X' && array[6] == 'X' && array[9] == 'X' ){
@@ -132,7 +137,7 @@ function vencedor(){
 
     }else if(array[3] == '0' && array[6] == '0' && array[9] == '0' ){
         Swal.fire('Voce Venceu Jogador 0');
-    }else
+    }
 
     //1 cruzado 
     if(array[1] == 'X' && array[5] == 'X' && array[9] == 'X' ){
@@ -140,7 +145,7 @@ function vencedor(){
 
     }else if(array[1] == '0' && array[5] == '0' && array[9] == '0' ){
         Swal.fire('Voce Venceu Jogador 0');
-    }else
+    }
 
     // segundo cruzado 
     if(array[3] == 'X' && array[5] == 'X' && array[7] == 'X' ){
